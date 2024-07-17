@@ -5,9 +5,9 @@ const app = express();
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("내가 보임?")
+    res.send("안녕안녕")
 })
 
-app.listen(3000, (req, res) => {
+app.listen(3000, () => {
     console.log("server on~")
 })
