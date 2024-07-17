@@ -16,6 +16,5 @@ jobs: # 작업의 단위
       - name: shell console test # 가장 작은 작업 단위의 이름
         run: echo 'my ci/cd' # 작업에서 실행할 쉘 스크립트 내용 echo 출력 명령어(console.log)
 
-  steps:
-  - name: mykey # 이름은 mykey
-    run: echo ${{ secrets.AWS_SECRET_KEY }}
+      - name: mykey # 이름은 mykey
+        run: echo ${{ secrets.AWS_SECRET_KEY }}
