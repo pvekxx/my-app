@@ -1,17 +1,21 @@
 name : CI/CD 구축
 
 # 이벤트를 구독
-on :
-  push : # push 이벤트가 발생하면 실행
-    branches : # push가 발생한 브랜치가 뭐일때 실행할지
+on:
+  push: # push 이벤트가 발생하면 실행
+    branches: # push가 발생한 브랜치가 뭐일때 실행할지
       - main
 
-jobs : # 작업의 단위
-  myTest : # 식별자 이름 내맘대로 정해도 됨 (myTest 어저구 저쩌구)
-    runs-on : ubuntu-latest # 사용할 운영체제
+jobs: # 작업의 단위
+  myTest: # 식별자 이름 내맘대로 정해도 됨 (myTest 어저구 저쩌구)
+    runs-on: ubuntu-latest # 사용할 운영체제
 
 
     # 작업의 가장 작은 단위
-    steps :
-      - name : shell console test # 가장 작은 작업 단위의 이름
-        run : echo 'my ci/cd' # 작업에서 실행할 쉘 스크립트 내용 echo 출력 명령어(console.log)
+    steps:
+      - name: shell console test # 가장 작은 작업 단위의 이름
+        run: echo 'my ci/cd' # 작업에서 실행할 쉘 스크립트 내용 echo 출력 명령어(console.log)
+
+  steps:
+  - name: mykey # 이름은 mykey
+    run: echo ${{ secrets.AWS_SECRET_KEY }}
