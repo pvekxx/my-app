@@ -114,4 +114,4 @@ jobs: # 작업의 단위
           port: ${{ secrets.PORT }}
           script: |
             cd /home/ubuntu
-            npm run star:dev
+            pm2 start ./dist/main.js
