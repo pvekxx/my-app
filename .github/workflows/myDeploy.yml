@@ -23,3 +23,17 @@ jobs: # 작업의 단위
         run: | # 코드를 줄내림해서 여러줄을 쓸때 사용 (한줄은 필요없음)
           ls
           pwd
+
+      - name: npm install # 의존성 설치
+        run: npm install
+
+      - name: build nestjs #빌드
+        run: npm run build
+
+      - name: build test # 빌드 파일 확인
+        run: |
+          ls
+          pwd
+          cd dist
+          ls
+          pwd
