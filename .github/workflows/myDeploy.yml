@@ -11,7 +11,7 @@ jobs: # 작업의 단위
 
     steps: # 작업의 가장 작은 단위
       - name: checkout # 작업의 작은 단위의 이름
-        uses: action/checkout@v4 # 레포지토리를 체크아웃 할 수 있게 도와주는 라이브러리
+        uses: actions/checkout@v4 # 레포지토리를 체크아웃 할 수 있게 도와주는 라이브러리
         # 브랜치에 있는 내용을 클론해온다. 워크플로우에 복사해온다.
 
       - name: set up node # uses 라이브러리를 사용할 것을 가져오고 with는 라이브러리의 속성 설정
