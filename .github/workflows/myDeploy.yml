@@ -38,21 +38,21 @@ jobs: # 작업의 단위
           ls
           pwd
 
-        # 러너에 빌드된 파일과 의존성들이 있는 상태 빌드 서버
-        # 운영 배포 서버에 전송해줘야 한다.
-        - name: upload build
-          uses: actions/upload-artifact@v4 # 빌드 결과물 저장, 빌드된 바이너리 패키지
-          with:
-            name: build-artifact
-            path: |
-              dist/
-              package.json
-              package-lock.json
+      # 러너에 빌드된 파일과 의존성들이 있는 상태 빌드 서버
+      # 운영 배포 서버에 전송해줘야 한다.
+      - name: upload build
+        uses: actions/upload-artifact@v4 # 빌드 결과물 저장, 빌드된 바이너리 패키지
+        with:
+          name: build-artifact
+          path: |
+            dist/
+            package.json
+            package-lock.json
 
-        # 운영 서버에 전송, ec2에 파일을 전송
-        ## ssh
-        - name: ssh 접근할 키파일 생성
-          run: | # .ssh 폴더가 있어도 에러를 발생 시키지 않는다. 부모 디렉터리 생성 -p parents의 약어
-            mkdir -p ~/.ssh
-            ls
-            pwd
+      # 운영 서버에 전송, ec2에 파일을 전송
+      ## ssh
+      - name: ssh 접근할 키파일 생성
+        run: | # .ssh 폴더가 있어도 에러를 발생 시키지 않는다. 부모 디렉터리 생성 -p parents의 약어
+          mkdir -p ~/.ssh
+          ls
+          pwd
