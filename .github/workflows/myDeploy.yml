@@ -62,4 +62,4 @@ jobs: # 작업의 단위
           echo "${{ secrets.AWS_SECRET_KEY }}" > ~/.ssh/aws_key
           chmod 600 ~/.ssh/aws_key
           ssh-keyscan -H ${{ secrets.HOST }} > ~/.ssh/known_hosts
-          cat ~/.ssh/know_hosts
+          cat ~/.ssh/known_hosts
